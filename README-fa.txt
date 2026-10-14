@@ -57,3 +57,12 @@ GAME 7 — نسخه آماده GitHub + Cloudflare Workers + D1
 - این نسخه از D1 استفاده می‌کند و نیازی به R2 ندارد.
 - برای QR، بعد از آنلاین شدن سایت، QR همان URL عمومی workers.dev را بسازید.
 - GitHub Actions برای Deploy نیازمند Secretهای معتبر و database_id صحیح است.
+
+
+به‌روزرسانی طراحی صفحه اصلی
+---------------------------
+- تصویر اختصاصی دسته بازی سه‌بعدی در public/assets/game7-3d-controller.png اضافه شده است.
+- بخش Hero در public/index.html و انیمیشن شناور آن در public/style.css به‌روزرسانی شده است.
+- نام Worker در wrangler.jsonc روی coffeeseven تنظیم شده تا Deploy به Worker فعلی انجام شود.
+- اتصال D1 و مسیر /admin حفظ شده‌اند.
+- برای اعمال تغییرات، فایل‌های این پروژه را در همان مخزن GitHub متصل به Worker قرار دهید و Commit/Push کنید. سپس وضعیت Deployments را بررسی کنید.

@@ -4,38 +4,9 @@
 @media(max-width:700px){.wrap{width:calc(100% - 28px)}.topbar{padding:17px 0}.hero{grid-template-columns:1fr;min-height:unset;padding:30px 0 45px}.hero-copy{text-align:center}.hero h1{font-size:48px}.hero h1 em{text-align:center}.hero-art{height:260px;grid-row:1}.controller{transform:scale(.82) rotate(-12deg)}.hero-copy .button{margin-top:10px}.service-grid{gap:9px}.service-card{padding:10px;min-height:185px;border-radius:13px}.console,.pool-art{height:95px}.console span{font-size:26px}.console b{font-size:48px}.pool-art:before{width:130px;height:55px}.pool-ball{width:34px;height:34px}.service-card h3{font-size:17px}.service-card p{font-size:10px}.round-arrow{width:26px;height:26px;bottom:10px;left:10px}.section{padding:38px 0}.section-title h2,.cafe-copy h2{font-size:25px}.price-grid{grid-template-columns:1fr}.price-card{padding:15px}.cafe-inner{grid-template-columns:1fr;padding:30px 0}.cafe-copy{text-align:center}.food-visual{height:175px;grid-row:1}.cup{transform:scale(.8) rotate(-7deg)}.burger{transform:scale(.85)}.product-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:9px}.product-card{padding:11px}.product-card .product-icon{height:75px}.perks{gap:7px;padding-bottom:35px}.perk{flex-direction:column;gap:5px;padding:13px 5px;text-align:center}.perk b{font-size:10px}.footer-inner{grid-template-columns:1fr 1fr;gap:10px}.footer-inner .brand{grid-column:1/-1}.admin-link{padding:9px 11px}}
 @media(prefers-reduced-motion:reduce){*,*:before,*:after{animation:none!important;scroll-behavior:auto!important;transition:none!important}}
 
-
-/* GAME 7 homepage visual refinement — clean 3D, restrained neon */
-.hero{min-height:490px;padding-top:28px;padding-bottom:72px;gap:34px}
-.hero-copy{max-width:520px}
-.hero h1{line-height:1.12;text-shadow:0 10px 32px #0008}
-.hero h1 span{display:inline-block;position:relative}
-.hero h1 span:after{content:"";display:block;height:5px;width:58%;margin:8px 0 0 auto;border-radius:9px;background:linear-gradient(90deg,var(--red),var(--gold));box-shadow:0 0 18px #ffbe2840}
-.hero-art{min-height:390px}
-.controller{transform:rotate(-12deg) rotateY(-14deg) scale(1.06);filter:drop-shadow(0 25px 18px #000b) drop-shadow(0 0 18px #ffc92813)}
-.orbit-one{border-color:#ffc92855;box-shadow:0 0 24px #ffc9280b}
-.orbit-two{border-color:#ff303b55}
-.float-chip{border-color:#4a3515;background:linear-gradient(135deg,#17130c,#090909);box-shadow:0 10px 30px #0007}
-.service-grid{gap:18px}
-.service-card{min-height:245px;padding:20px 21px 18px;border-radius:20px;background:linear-gradient(145deg,#191919 0%,#101010 55%,#0b0b0b 100%);box-shadow:0 14px 35px #0005,inset 0 1px #ffffff08;isolation:isolate}
-.service-card:before{content:"";position:absolute;inset:0;pointer-events:none;background:radial-gradient(ellipse at 50% 10%,#ffc9280d,transparent 55%);z-index:-1}
-.service-card:after{content:"";position:absolute;right:20px;left:20px;top:0;height:2px;background:linear-gradient(90deg,transparent,var(--gold),transparent);opacity:.55}
-.service-card.red:after{background:linear-gradient(90deg,transparent,var(--red),transparent)}
-.service-card:hover{transform:translateY(-7px);box-shadow:0 22px 45px #0008,0 0 0 1px #ffc92822}
-.service-card h3{font-size:22px;letter-spacing:.2px;margin-top:15px}
-.service-card p{font-size:12px;line-height:1.8}
-.console{height:125px;transform:perspective(500px) rotateY(-13deg) rotateX(4deg)}
-.console i{width:118px;height:78px;border-radius:17px;background:linear-gradient(145deg,#333,#0b0b0b);box-shadow:8px 10px 0 #202020,0 0 20px #ff303b12;border-color:#555}
-.ps5 i{background:linear-gradient(145deg,#4b4b4b,#101010);box-shadow:8px 10px 0 #222,0 0 22px #ffc92812}
-.pool-art{border:1px solid #37654c;background:linear-gradient(145deg,#123b2b,#06150f);box-shadow:inset 0 0 28px #0008,0 10px 18px #0004}
-.pool-art:before{border-color:#986033;box-shadow:0 0 0 2px #1e120b,0 10px 20px #0008}
-.pool-ball{background:radial-gradient(circle at 30% 25%,#fff,#d8d8d8 18%,#191919 70%);color:#111;border:2px solid #f5f5f5}
-.section{padding-top:62px;padding-bottom:62px}
-.section-title{margin-bottom:32px}
-.section-title small{letter-spacing:3.5px;color:#b2a58a}
-.section-title h2{font-size:32px}
-.section-title h2 span{position:relative}
-.section-title h2 span:after{content:"";position:absolute;bottom:-5px;right:0;width:70%;height:3px;border-radius:4px;background:var(--red)}
-.price-card,.product-card{transition:transform .25s,border-color .25s,box-shadow .25s}
-.price-card:hover,.product-card:hover{transform:translateY(-4px);border-color:#6c511a;box-shadow:0 15px 30px #0006}
-@media(max-width:700px){.hero{padding-top:20px;gap:0}.hero-art{min-height:245px}.controller{transform:scale(.84) rotate(-12deg)}.service-grid{gap:9px}.service-card{min-height:195px;padding:12px 10px}.console{height:98px}.console i{width:90px;height:65px}.section{padding-top:42px;padding-bottom:42px}.section-title{margin-bottom:23px}.section-title h2{font-size:27px}}
+/* GAME 7 premium 3D hero artwork update */
+.hero-art{height:400px;min-width:0;overflow:visible;perspective:none;display:flex;align-items:center;justify-content:center;position:relative}
+.hero-controller-art{display:block;width:min(112%,590px);max-width:none;height:auto;object-fit:contain;mix-blend-mode:screen;filter:drop-shadow(0 24px 28px #0008);transform:translateY(0) scale(1.02);animation:controller-hover 6s ease-in-out infinite;will-change:transform}
+@keyframes controller-hover{0%,100%{transform:translateY(0) scale(1.02)}50%{transform:translateY(-9px) scale(1.035)}}
+@media(max-width:700px){.hero-art{height:auto;min-height:220px;max-height:300px;grid-row:1;margin:0 -8px}.hero-controller-art{width:min(108%,480px);max-height:300px;object-fit:contain}.hero{gap:0}.hero-copy{padding-top:4px}}
+@media(prefers-reduced-motion:reduce){.hero-controller-art{animation:none;will-change:auto}}
