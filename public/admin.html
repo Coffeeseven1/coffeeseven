@@ -1,0 +1,11 @@
+<!doctype html>
+<html lang="fa" dir="rtl"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>پنل مدیریت | GAME 7</title><link rel="stylesheet" href="/admin.css"></head>
+<body><main class="admin-wrap"><a href="/" class="back">← بازگشت به منو</a><header><span>♛ GAME <b>7</b></span><h1>پنل مدیریت</h1><p>تعرفه‌ها، محصولات و اطلاعات کافه را مدیریت کنید.</p></header>
+<section id="login-box" class="panel"><h2>ورود مدیر</h2><form id="login-form"><label>رمز عبور مدیریت<input id="password" type="password" required autocomplete="current-password" placeholder="رمز عبور سرور"></label><button>ورود به پنل</button><p id="login-error" class="error"></p></form><small>رمز پیش‌فرض فقط برای اجرای محلی است؛ پیش از انتشار، ADMIN_PASSWORD را تغییر دهید.</small></section>
+<section id="editor" hidden>
+<div class="panel"><div class="row-title"><h2>اطلاعات کافه</h2><button id="save-all">ذخیره تغییرات</button></div><div class="form-grid"><label>نام کافه<input id="s-name"></label><label>شماره تماس<input id="s-phone"></label><label>آدرس<input id="s-address"></label><label>ساعت کاری<input id="s-hours"></label><label>اینستاگرام<input id="s-instagram"></label></div></div>
+<div class="panel"><div class="row-title"><h2>تعرفه‌ها</h2><button id="add-price">افزودن تعرفه</button></div><div id="prices-editor"></div></div>
+<div class="panel"><div class="row-title"><h2>نوشیدنی و خوراکی</h2><button id="add-product">افزودن محصول</button></div><div id="products-editor"></div></div>
+<div class="panel"><div class="row-title"><h2>پیشنهادهای ویژه</h2><button id="add-offer">افزودن پیشنهاد</button></div><div id="offers-editor"></div></div>
+<div class="save-bottom"><button id="save-all-bottom">ذخیره همه تغییرات</button><p id="save-status" aria-live="polite"></p></div>
+</section></main><script src="/admin.js"></script></body></html>

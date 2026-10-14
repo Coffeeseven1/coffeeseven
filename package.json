@@ -1,0 +1,15 @@
+{
+  "name": "game7-cafe-menu-cloudflare",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "dev": "wrangler dev",
+    "deploy": "wrangler deploy",
+    "db:create": "wrangler d1 create game7-cafe-db",
+    "db:migrate:local": "wrangler d1 migrations apply game7-cafe-db --local",
+    "db:migrate:remote": "wrangler d1 migrations apply game7-cafe-db --remote"
+  },
+  "devDependencies": {
+    "wrangler": "^4.40.0"
+  }
+}
