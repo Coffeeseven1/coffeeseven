@@ -26,3 +26,48 @@ button,input,select,textarea{font-family:inherit}button{transition:transform .2s
 @media(max-width:900px){.topbar{grid-template-columns:auto 1fr;gap:12px}.main-nav{grid-column:1/-1;grid-row:2;justify-content:flex-start;overflow-x:auto;scrollbar-width:none}.main-nav::-webkit-scrollbar{display:none}.admin-link{justify-self:start}.hero{min-height:450px}.service-art{height:190px}.service-card{min-height:320px}}
 @media(max-width:700px){.topbar{width:calc(100% - 26px);grid-template-columns:1fr auto;padding:14px 0}.brand{min-width:0}.main-nav{grid-column:1/-1;grid-row:2;width:100%;justify-content:flex-start}.nav-item{padding:9px 13px;font-size:11px}.admin-link{grid-column:2;grid-row:1;padding:9px 12px;font-size:11px}.hero{width:calc(100% - 26px);grid-template-columns:1fr;gap:0;padding:10px 0 42px}.hero-art{grid-row:1;height:280px;min-height:0;max-height:none;margin:0 -10px}.hero-controller-art{width:min(112%,480px);max-height:290px}.hero-copy{text-align:center;padding-top:0}.hero h1{font-size:46px;margin:10px 0}.hero h1 em{text-align:center}.hero-level{left:8%;bottom:7%;font-size:8px}.hero:after{bottom:4px}.service-grid{grid-template-columns:1fr;gap:14px}.service-card{min-height:310px;padding:14px}.service-art{height:200px}.service-logo .ps-mark{font-size:31px}.service-logo>b{font-size:46px}.ps-console{left:25%}.ps5-console{left:29%}.service-cta{min-width:64%}.section{padding:36px 0}.services-section{padding-top:30px}.price-grid{grid-template-columns:1fr}.cafe-inner{grid-template-columns:1fr}.product-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.footer-inner{grid-template-columns:1fr 1fr}.hero-orbit{width:75%;left:12%}}
 @media(prefers-reduced-motion:reduce){.hero-controller-art,.hero-orbit,.blue-orbit,.ps-console,.ps5-console,.mini-pad,.pool-ball,.service-logo{animation:none!important;transition:none!important}}
+
+/* GAME 7 refinement: keep admin inside the nav, use controller artwork, animate billiards */
+.admin-link{display:none!important}
+.admin-nav-link{color:var(--gold)!important;white-space:nowrap}
+.admin-nav-link .admin-glyph{color:var(--gold);margin-left:5px;font-size:13px}
+.admin-nav-link b{color:var(--gold);margin-right:5px}
+.main-nav{gap:4px}
+.controller-stage{position:absolute;inset:12px 6% 4px;display:grid;place-items:center;perspective:800px;isolation:isolate}
+.controller-stage:before{content:"";position:absolute;width:74%;height:25%;bottom:7%;border-radius:50%;background:radial-gradient(ellipse,#1688ff62 0,transparent 72%);filter:blur(12px);animation:controller-stage-glow 3.6s ease-in-out infinite}
+.real-controller{position:relative;z-index:2;display:block;width:94%;height:88%;object-fit:contain;mix-blend-mode:screen;filter:drop-shadow(0 18px 15px #000b) drop-shadow(0 0 15px #1688ff3b);animation:real-pad-float 5.4s ease-in-out infinite;transform-origin:50% 55%}
+.ps4-controller{width:89%;height:78%;filter:grayscale(1) brightness(.83) contrast(1.15) drop-shadow(0 18px 15px #000c) drop-shadow(0 0 16px #1688ff56);animation-delay:-1.4s}
+.ps5-controller{width:104%;height:100%;object-fit:contain;mix-blend-mode:screen;filter:drop-shadow(0 18px 15px #000c) drop-shadow(0 0 18px #4c83ff4d)}
+.controller-reflection{position:absolute;z-index:1;width:65%;height:10%;bottom:8%;border-radius:50%;background:linear-gradient(90deg,transparent,#1688ff52,transparent);filter:blur(7px);transform:rotateX(70deg);animation:reflection-breathe 4s ease-in-out infinite}
+.ps4-art,.ps5-art{background:radial-gradient(ellipse at 50% 85%,#0b2a4a5c,transparent 68%),linear-gradient(180deg,#07101d80,#03050938)}
+.ps4-art:after,.ps5-art:after{content:"";position:absolute;inset:0;border-radius:inherit;pointer-events:none;background:linear-gradient(120deg,transparent 30%,#1688ff0c 48%,transparent 62%);transform:translateX(-100%);animation:card-sheen 7s ease-in-out infinite}
+.ps4-art .service-logo,.ps5-art .service-logo{z-index:4}
+.billiards-art{background:radial-gradient(ellipse at 50% 85%,#00df8a2b,transparent 68%),linear-gradient(180deg,#061a12,#020906)}
+.billiards-art:before{content:"";position:absolute;inset:0;background:radial-gradient(circle at 15% 18%,#ffd46b45 0 1px,transparent 3px),radial-gradient(circle at 78% 28%,#00df8a5c 0 1px,transparent 3px),radial-gradient(circle at 66% 78%,#ffc92845 0 1px,transparent 3px);background-size:65px 57px,83px 71px,91px 77px;animation:pool-particles 9s linear infinite;z-index:0}
+.pool-table{animation:table-hover 6s ease-in-out infinite;transform-origin:50% 70%}
+.table-felt-shine{position:absolute;inset:4px;border-radius:6px;background:linear-gradient(115deg,transparent 20%,#d8ffec17 45%,transparent 65%);background-size:200% 100%;animation:felt-shine 5s ease-in-out infinite;pointer-events:none}
+.cue-stick{transform-origin:15% 50%;animation:cue-aim 5.5s ease-in-out infinite}
+.ball-one{animation:ball-roll-one 6s ease-in-out infinite}
+.ball-eight{animation:ball-roll-eight 7s ease-in-out infinite}
+.ball-three{animation:ball-roll-three 5.6s ease-in-out infinite}
+.ball-nine{position:absolute;width:31px;height:31px;right:37%;bottom:64px;border:2px solid #ddd;border-radius:50%;display:grid;place-items:center;font:900 13px Arial,sans-serif;color:#111;background:radial-gradient(circle at 30% 25%,#fff7a6,#ffd21d 60%,#8d6400);box-shadow:inset -4px -5px 7px #0008,inset 2px 2px 4px #fff,0 10px 12px #0009;z-index:2;animation:ball-roll-nine 7.2s ease-in-out infinite}
+.service-card:hover .real-controller{animation-duration:2.2s;filter:drop-shadow(0 22px 20px #000c) drop-shadow(0 0 23px #1688ff80)}
+@keyframes real-pad-float{0%,100%{transform:translateY(2px) rotate(-4deg) rotateY(-5deg)}50%{transform:translateY(-9px) rotate(2deg) rotateY(5deg)}}
+@keyframes controller-stage-glow{0%,100%{opacity:.55;transform:scaleX(.88)}50%{opacity:1;transform:scaleX(1.08)}}
+@keyframes reflection-breathe{0%,100%{opacity:.3;transform:scaleX(.82) rotateX(70deg)}50%{opacity:.8;transform:scaleX(1.05) rotateX(70deg)}}
+@keyframes card-sheen{0%,55%,100%{transform:translateX(-100%)}75%{transform:translateX(100%)}}
+@keyframes table-hover{0%,100%{transform:perspective(400px) rotateX(48deg) rotateZ(-5deg) translateY(0)}50%{transform:perspective(400px) rotateX(46deg) rotateZ(-4deg) translateY(-4px)}}
+@keyframes felt-shine{0%,100%{background-position:150% 0;opacity:.25}50%{background-position:-50% 0;opacity:.8}}
+@keyframes pool-particles{from{background-position:0 0,0 0,0 0}to{background-position:130px -90px,-120px 110px,90px 140px}}
+@keyframes cue-aim{0%,20%,100%{transform:rotate(-24deg) translateX(0)}35%,46%{transform:rotate(-21deg) translateX(-7px)}50%,58%{transform:rotate(-24deg) translateX(7px)}70%{transform:rotate(-24deg) translateX(0)}}
+@keyframes ball-roll-one{0%,12%,100%{transform:translate(0,0) rotate(0)}25%{transform:translate(16px,-4px) rotate(70deg)}40%{transform:translate(31px,2px) rotate(150deg)}55%{transform:translate(13px,6px) rotate(230deg)}70%{transform:translate(0,0) rotate(360deg)}}
+@keyframes ball-roll-eight{0%,20%,100%{transform:translate(0,0) rotate(0)}35%{transform:translate(-13px,-7px) rotate(80deg)}50%{transform:translate(-25px,-2px) rotate(180deg)}68%{transform:translate(-8px,5px) rotate(280deg)}}
+@keyframes ball-roll-three{0%,16%,100%{transform:translate(0,0) rotate(0)}30%{transform:translate(-14px,5px) rotate(100deg)}46%{transform:translate(-21px,-5px) rotate(210deg)}65%{transform:translate(-4px,-1px) rotate(330deg)}}
+@keyframes ball-roll-nine{0%,18%,100%{transform:translate(0,0) rotate(0)}33%{transform:translate(11px,-7px) rotate(110deg)}52%{transform:translate(25px,-1px) rotate(220deg)}70%{transform:translate(8px,4px) rotate(340deg)}}
+@media(max-width:900px){.admin-nav-link{padding-inline:10px}.main-nav{overflow-x:auto;scrollbar-width:none}.main-nav::-webkit-scrollbar{display:none}}
+@media(max-width:700px){.admin-nav-link{font-size:10px;padding:8px 10px}.controller-stage{inset:10px 4% 2px}.real-controller{width:100%;height:86%}.ps5-controller{height:100%}.ps4-controller{width:94%;height:78%}.ball-nine{bottom:54px}}
+@media(prefers-reduced-motion:reduce){.real-controller,.controller-stage:before,.controller-reflection,.ps4-art:after,.ps5-art:after,.pool-table,.table-felt-shine,.cue-stick,.ball-one,.ball-eight,.ball-three,.ball-nine,.billiards-art:before{animation:none!important}}
+
+.real-controller{mix-blend-mode:normal}
+.ps4-controller{width:96%;height:86%;object-fit:contain}
+.ps5-controller{width:102%;height:92%;object-fit:contain}
