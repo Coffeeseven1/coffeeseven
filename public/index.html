@@ -2,57 +2,32 @@
 <html lang="fa" dir="rtl">
 <head>
 <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="theme-color" content="#090909">
-<title>کافه گیم سون | GAME 7</title>
-<link rel="stylesheet" href="/style.css">
+<meta name="theme-color" content="#090909"><meta name="description" content="منوی دیجیتال کافه گیم سون؛ تعرفه PS4، PS5، بیلیارد و منوی کافه.">
+<title>کافه گیم سون | GAME 7</title><link rel="stylesheet" href="/style.css">
 </head>
 <body>
 <header class="topbar wrap">
-  <a class="brand" href="#"><span class="crown">♛</span><span class="brand-name">GAME<span>7</span></span><small>کافه گیم سون</small></a>
-  <a class="admin-link" href="/admin">مدیریت <b>↗</b></a>
+  <a class="brand" href="#home" aria-label="GAME 7 خانه"><span class="crown">♛</span><span class="brand-name">GAME<span>7</span></span><small>کافه گیم سون</small></a>
+  <nav class="main-nav" aria-label="ناوبری اصلی">
+    <a class="nav-item active" href="#home">خانه</a><a class="nav-item" href="#services">بازی‌ها</a><a class="nav-item" href="#menu">نوشیدنی‌ها</a><a class="nav-item" href="#menu">خوراکی‌ها</a><a class="nav-item" href="#contact">تماس با ما</a>
+  </nav>
+  <a class="admin-link" href="/admin"><span class="admin-glyph">⌘</span> پنل مدیریت <b>↗</b></a>
 </header>
 <main>
-<section class="hero wrap">
-  <div class="hero-copy">
-    <div class="eyebrow"><i></i> PLAY · DRINK · BILLIARD</div>
-    <h1>کافه گیم<br><span>سون</span> <em>GAME 7</em></h1>
-    <p>بازی کن، نوش جان کن، رقابت کن.</p>
-    <a class="button primary" href="#services">مشاهده خدمات <span>←</span></a>
-  </div>
-  <div class="hero-art" aria-label="دسته بازی سه‌بعدی با نورپردازی گیمینگ">
-    <img class="hero-controller-art" src="/assets/game7-3d-controller.png" alt="دسته بازی سه‌بعدی با نور طلایی و قرمز" width="780" height="550" fetchpriority="high">
-  </div>
+<section class="hero wrap" id="home">
+  <div class="hero-copy"><div class="eyebrow"><i></i> PLAY · DRINK · BILLIARD</div><h1>کافه گیم<br><span>سون</span><em>GAME 7</em></h1><p>بازی کن، نوش جان کن، رقابت کن.</p><a class="button primary" href="#services">مشاهده خدمات <span>←</span></a></div>
+  <div class="hero-art" aria-label="دسته بازی سه‌بعدی با نورپردازی طلایی و قرمز"><div class="hero-glow"></div><div class="hero-orbit orbit-a"></div><div class="hero-orbit orbit-b"></div><img class="hero-controller-art" src="/assets/game7-controller-cutout.png" alt="دسته بازی سه‌بعدی GAME 7" width="589" height="470" fetchpriority="high"><div class="hero-level">LEVEL UP <b>+7</b></div></div>
 </section>
-<section class="wrap section" id="services">
-  <div class="section-title"><small>CHOOSE YOUR GAME</small><h2>خدمات <span>ما</span></h2></div>
-  <div class="service-grid">
-    <a href="#prices" class="service-card red"><div class="console ps4"><span>PS</span><b>4</b><i></i></div><h3>PS4</h3><p>مشاهده تعرفه‌ها</p><span class="round-arrow">←</span></a>
-    <a href="#prices" class="service-card gold"><div class="console ps5"><span>PS</span><b>5</b><i></i></div><h3>PS5</h3><p>مشاهده تعرفه‌ها</p><span class="round-arrow">←</span></a>
-    <a href="#prices" class="service-card red"><div class="pool-art"><div class="pool-ball">8</div><i></i></div><h3>بیلیارد</h3><p>مشاهده تعرفه‌ها</p><span class="round-arrow">←</span></a>
-  </div>
-</section>
-<section class="wrap section" id="prices">
-  <div class="section-title"><small>PLAY TIME</small><h2>تعرفه <span>بازی</span></h2></div>
-  <div id="price-list" class="price-grid"><div class="loading">در حال بارگذاری تعرفه‌ها…</div></div>
-</section>
-<section class="cafe-section">
- <div class="wrap cafe-inner">
-  <div class="cafe-copy"><small>DRINKS & BITES</small><h2>منوی <span>کافه</span></h2><p>یک استراحت خوشمزه بین بازی‌ها.</p><a class="button secondary" href="#menu">دیدن منو <span>←</span></a></div>
-  <div class="food-visual"><div class="cup"><span>☕</span></div><div class="burger"><div class="bun"></div><div class="lettuce"></div><div class="patty"></div><div class="cheese"></div><div class="bottom-bun"></div></div><div class="fries"><i></i><i></i><i></i><i></i><i></i></div></div>
- </div>
-</section>
-<section class="wrap section" id="menu">
- <div class="section-title"><small>CAFE MENU</small><h2>نوشیدنی و <span>خوراکی</span></h2></div>
- <div class="menu-tabs"><button class="tab active" data-category="all">همه</button><button class="tab" data-category="drinks">نوشیدنی</button><button class="tab" data-category="food">خوراکی</button></div>
- <div id="product-list" class="product-grid"><div class="loading">در حال بارگذاری منو…</div></div>
-</section>
-<section class="wrap perks">
- <div class="perk"><span>♟</span><b>بازی گروهی</b></div><div class="perk"><span>♛</span><b>فضای VIP</b></div><div class="perk"><span>✦</span><b>پیشنهادهای ویژه</b></div>
-</section>
-<footer class="footer">
- <div class="wrap footer-inner"><div class="brand"><span class="brand-name">GAME<span>7</span></span><small>کافه گیم سون</small></div><div><small>ساعت کاری</small><p id="hours">از پنل مدیریت وارد کنید</p></div><div><small>آدرس</small><p id="address">آدرس کافه</p></div><div><small>تماس با ما</small><p id="phone">شماره تماس</p><p id="instagram">اینستاگرام</p></div></div>
- <div class="copyright">GAME 7 · PLAY · DRINK · BILLIARD</div>
-</footer>
+<section class="wrap section services-section" id="services"><div class="section-title"><small>CHOOSE YOUR GAME</small><h2>خدمات <span>ما</span></h2></div>
+<div class="service-grid">
+<a href="#prices" class="service-card ps4-card"><div class="service-art ps4-art" aria-hidden="true"><div class="blue-orbit"></div><div class="ps-console ps4-console"><i></i><b></b></div><div class="mini-pad"><span></span><i></i></div><div class="service-logo ps4-logo"><span class="ps-mark">P<span>S</span></span><b>4</b></div></div><h3>PS4</h3><p>تجربه بازی‌های کلاسیک و محبوب</p><span class="service-cta">مشاهده تعرفه‌ها <b>←</b></span></a>
+<a href="#prices" class="service-card ps5-card"><div class="service-art ps5-art" aria-hidden="true"><div class="blue-orbit"></div><div class="ps5-console"><i></i><b></b><span></span></div><div class="mini-pad white-pad"><span></span><i></i></div><div class="service-logo ps5-logo"><span class="ps-mark">P<span>S</span></span><b>5</b></div></div><h3>PS5</h3><p>نسل جدید بازی با کیفیت هیجان‌انگیز</p><span class="service-cta">مشاهده تعرفه‌ها <b>←</b></span></a>
+<a href="#prices" class="service-card billiards-card"><div class="service-art billiards-art" aria-hidden="true"><div class="pool-table"><i class="pocket p1"></i><i class="pocket p2"></i><i class="pocket p3"></i><i class="pocket p4"></i><i class="pocket p5"></i><i class="pocket p6"></i></div><div class="cue-stick"></div><div class="pool-ball ball-one">1</div><div class="pool-ball ball-eight">8</div><div class="pool-ball ball-three">3</div><div class="service-logo pool-logo"><span>♛</span><b>بیلیارد</b></div></div><h3>بیلیارد</h3><p>تفریح و هیجان در کنار دوستان</p><span class="service-cta">مشاهده تعرفه‌ها <b>←</b></span></a>
+</div></section>
+<section class="wrap section" id="prices"><div class="section-title"><small>PLAY TIME</small><h2>تعرفه <span>بازی</span></h2></div><div id="price-list" class="price-grid"><div class="loading">در حال بارگذاری تعرفه‌ها…</div></div></section>
+<section class="cafe-section"><div class="wrap cafe-inner"><div class="cafe-copy"><small>DRINKS & BITES</small><h2>منوی <span>کافه</span></h2><p>یک استراحت خوشمزه بین بازی‌ها.</p><a class="button secondary" href="#menu">دیدن منو <span>←</span></a></div><div class="food-visual"><div class="cup"><span>☕</span></div><div class="burger"><div class="bun"></div><div class="lettuce"></div><div class="patty"></div><div class="cheese"></div><div class="bottom-bun"></div></div><div class="fries"><i></i><i></i><i></i><i></i><i></i></div></div></div></section>
+<section class="wrap section" id="menu"><div class="section-title"><small>CAFE MENU</small><h2>نوشیدنی و <span>خوراکی</span></h2></div><div class="menu-tabs"><button class="tab active" data-category="all">همه</button><button class="tab" data-category="drinks">نوشیدنی</button><button class="tab" data-category="food">خوراکی</button></div><div id="product-list" class="product-grid"><div class="loading">در حال بارگذاری منو…</div></div></section>
+<section class="wrap perks"><div class="perk"><span>♟</span><b>بازی گروهی</b></div><div class="perk"><span>♛</span><b>فضای دوستانه</b></div><div class="perk"><span>✦</span><b>پیشنهادهای ویژه</b></div></section>
+<footer class="footer" id="contact"><div class="wrap footer-inner"><div class="brand"><span class="brand-name">GAME<span>7</span></span><small>کافه گیم سون</small></div><div><small>ساعت کاری</small><p id="hours">از پنل مدیریت وارد کنید</p></div><div><small>آدرس</small><p id="address">آدرس کافه</p></div><div><small>تماس با ما</small><p id="phone">شماره تماس</p><p id="instagram">اینستاگرام</p></div></div><div class="copyright">GAME 7 · PLAY · DRINK · BILLIARD</div></footer>
 <script src="/app.js"></script>
-</main>
-</body></html>
+</main></body></html>
