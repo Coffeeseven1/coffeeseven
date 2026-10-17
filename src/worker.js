@@ -56,21 +56,29 @@ async function handleApi(request, env) {
     return json({ token: await makeToken(env.SESSION_SECRET) });
   }
 
-  if (url.pathname === "/api/admin/data" && request.method === "PUT") {
+  if (url.pathname === "/api/admin/data" && ["GET", "PUT"].includes(request.method)) {
     if (!env.SESSION_SECRET || !(await validToken(request, env.SESSION_SECRET))) {
       return json({ error: "نشست مدیریت معتبر نیست؛ دوباره وارد شوید." }, 401);
+    }
+    if (request.method === "GET") {
+      try { return json(await readData(env)); }
+      catch (e) { return json({ error: "دیتابیس آماده نیست. در GitHub Actions اجرای مهاجرت D1 را بررسی کنید." }, 503); }
     }
     let data;
     try { data = await request.json(); } catch { return json({ error: "ساختار اطلاعات نامعتبر است." }, 400); }
     if (!data || !Array.isArray(data.prices) || !Array.isArray(data.products) ||
-        !Array.isArray(data.offers) || typeof data.settings !== "object") {
+        !Array.isArray(data.offers) || !data.settings || typeof data.settings !== "object" || Array.isArray(data.settings)) {
       return json({ error: "ساختار اطلاعات معتبر نیست." }, 400);
     }
     const payload = JSON.stringify(data);
     if (payload.length > 500000) return json({ error: "حجم اطلاعات بیش از حد مجاز است." }, 413);
-    await env.GAME7_DB.prepare(
-      "INSERT INTO app_data (id, payload, updated_at) VALUES (?, ?, CURRENT_TIMESTAMP) ON CONFLICT(id) DO UPDATE SET payload=excluded.payload, updated_at=CURRENT_TIMESTAMP"
-    ).bind("main", payload).run();
+    try {
+      await env.GAME7_DB.prepare(
+        "INSERT INTO app_data (id, payload, updated_at) VALUES (?, ?, CURRENT_TIMESTAMP) ON CONFLICT(id) DO UPDATE SET payload=excluded.payload, updated_at=CURRENT_TIMESTAMP"
+      ).bind("main", payload).run();
+    } catch (e) {
+      return json({ error: "ذخیره در دیتابیس انجام نشد. مهاجرت D1 یا اتصال GAME7_DB را بررسی کنید." }, 503);
+    }
     return json({ ok: true });
   }
   return json({ error: "مسیر پیدا نشد." }, 404);
